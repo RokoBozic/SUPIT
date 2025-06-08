@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldSkills Kazan 2019</title>
+    <link rel="stylesheet" href="css/news1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact-modal.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+
+<nav>
+    <div id="navbar-content" class="nav-container">
+        <!-- JS will populate this -->
+    </div>
+</nav>
+
+    <div class="hero">
+        <h1>Josip Stanešić ranked 12th in the world and won the Medal of Excellence.</h1>
+    </div>
+
+    <div class="content">
+        <h2>WorldSkills Competition - Kazan 2019</h2>
+        <p>After a year of preparation for the WorldSkills Kazan 2019 competition, where 1300 participants from around the world competed, the effort truly paid off. Josip, a third-year undergraduate student of Systems Engineering, secured the 12th place in the skill of IT Networks and System Administration and won the Medal of Excellence! Congratulations to Josip and his mentors who prepared him for this competition – Head of Systems Engineering Studies Silvije Papić, Head of the Department for Operating Systems Vedran Dakić, and Assistant Jasmin Redžepagić. Congratulations also to our third-year Software Engineering student Josip Horvat and his mentor Goran Đambić, Head of the Software Engineering Department, for winning 16th place in the skill of IT Software Solutions for Business.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="img/galerija1.jpg" alt="Josip with medal" onclick="openSlider(0)">
+        <img src="img/galerija2.jpg" alt="Josip with friends" onclick="openSlider(1)">
+    </div>
+    
+    <!-- Slider Overlay -->
+    <div id="sliderOverlay">
+        <span id="sliderClose" onclick="closeSlider()">&times;</span>
+        <img id="sliderImg" src="">
+        <div id="sliderPrev" onclick="changeSlide(-1)">&#10094;</div>
+        <div id="sliderNext" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+    
+
+    <script>
+        var currentSlide = 0;
+        var images = [
+            "img/galerija1.jpg",
+            "img/galerija2.jpg"
+        ];
+    
+        function openSlider(index) {
+            currentSlide = index;
+            document.getElementById("sliderImg").src = images[currentSlide];
+            document.getElementById("sliderOverlay").style.display = "flex";
+        }
+    
+        function closeSlider() {
+            document.getElementById("sliderOverlay").style.display = "none";
+        }
+    
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + images.length) % images.length;
+            document.getElementById("sliderImg").src = images[currentSlide];
+        }
+    </script>
+
+    <div class="video">
+        <video width="600" controls>
+            <source src="video/worldskills.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="footer" style="background: url('img/zaiskri-bg.jpg') center/cover no-repeat;">
+        BE EXCELLENT AT WHAT YOU LOVE
+    </div>
+
+    <!-- Contact Modal will be injected by contact-modal.js -->
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Login and Authentication Styles
+   ========================================================================== */
+
+/* Base Styles
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Authentication Container
+   ========================================================================== */
+.auth-box {
+  margin-top: 90px;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Login Form
+   ========================================================================== */
+.login-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Elements */
+.login-form input,
+.login-form button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #f8c102;
+  box-shadow: 0 0 0 2px rgba(248, 193, 2, 0.2);
+}
+
+.login-form button {
+  background-color: #f8c102;
+  color: #000;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #e6b000;
+}
+
+/* Highlight Banner
+   ========================================================================== */
+.highlight-banner {
+  position: relative;
+  background-image: url('../img/zaiskri-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #fff;
+  margin: 2rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  display: inline-block;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.highlight-banner p {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Footer
+   ========================================================================== */
+.footer {
+  background: url('../images/new1/footer.jpg') center/cover no-repeat;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin-top: auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.footer > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .auth-box {
+    margin-top: 70px;
+    padding: 1rem;
+  }
+
+  .login-form {
+    padding: 1.5rem;
+  }
+
+  .highlight-banner {
+    padding: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth-box {
+    margin-top: 60px;
+  }
+
+  .login-form {
+    padding: 1rem;
+  }
+
+  .banner-overlay {
+    padding: 1.5rem;
+  }
+}
+
+/* Print Styles
+   ========================================================================== */
+@media print {
+  .login-form {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .highlight-banner {
+    background-image: none;
+    background-color: #f8c102;
+  }
+
+  .banner-overlay {
+    background-color: transparent;
+  }
+
+  .footer {
+    background-image: none;
+    background-color: #333;
+  }
+}
